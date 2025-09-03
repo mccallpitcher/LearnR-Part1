@@ -1,4 +1,4 @@
-**Step 1:** Open the slides for today's workshop: https://mccall-pitcher.quarto.pub/learn-r-slides 
+**Step 1:** Open the slides for today's workshop: [https://mccall-pitcher.quarto.pub/learn-r-slides ](https://mccall-pitcher.quarto.pub/learn-r-slides/)
 <br>
 **Step 2:** Download materials as a zip file by clicking the green "Code" button, then "Download ZIP"
 <br>

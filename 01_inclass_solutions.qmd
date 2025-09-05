@@ -1,0 +1,102 @@
+---
+title: "Learn R Part I In-class Solutions"
+format: html
+editor: visual
+---
+
+```{r}
+# load tidyverse
+library(tidyverse)
+```
+
+## 05. How do I write and run code in a coding notebook?
+
+Write and run code that finds the square root of 60
+
+Hint: the square root function in R is `sqrt()`
+
+```{r}
+# find sq root
+sqrt(60)
+```
+
+## 06. What is an object and how do I create one?
+
+Create an object called `my_age` that stores your age, then call the object so it prints to the Console.
+
+```{r}
+# store object
+my_age <- 32
+
+# call object
+my_age
+```
+
+## 08. **How do I import data?**
+
+Load the Taylor Swift data using `read_csv()`. You can name your data frame object `tswift`
+
+```{r}
+tswift <- read_csv("data/taylor_swift_spotify.csv")
+```
+
+## 09. **How can I get to know my variables?**
+
+1.  Using `summary()`, what is the median of `danceability`?
+
+    ***0.5935***
+
+2.  Using `unique()`, name two Taylor Swift albums exactly as they appear in the data frame.
+
+    ***"Lover", "evermore (deluxe version)"***
+
+```{r}
+# check out danceability
+summary(tswift$danceability)
+
+# check out albums
+unique(tswift$album)
+```
+
+## 10. **What are some ways I can transform my data?**
+
+### 10.1 Subset rows with `filter()`
+
+Filter `tswift` to only contain songs that are *NOT* on the "Lover" album
+
+```{r}
+# filter out Lover
+tswift |> 
+  filter(album != "Lover")
+```
+
+### 10.2 Subset columns with `select()`
+
+Limit the columns in `tswift` to only include `name` and `tempo`
+
+```{r}
+# subset columns
+tswift |> 
+  select(name, tempo)
+```
+
+### 10.3 Sort rows with `arrange()`
+
+What are the 3 most popular Taylor Swift songs (according to Spotify)?
+
+```{r}
+tswift |> 
+  arrange(desc(popularity))
+```
+
+### 10.4 Create new variables with `mutate()`
+
+Create a new variable in `tswift` that multiplies `danceability` by 100 (you pick the name of the new variable), then limit your columns to `name`, `danceability`, and your new variable.
+
+Note: The symbol for multiplication in R is `*`
+
+```{r}
+tswift |> 
+  mutate(dance_100 = danceability * 100) |> 
+  select(name, danceability, dance_100)
+```

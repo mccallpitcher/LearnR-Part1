@@ -1,5 +1,7 @@
-**Step 1:** Open the slides in a new tab: https://mccall-pitcher.quarto.pub/learn-r-slides/#/title-slide
+**Link to slides:** Open the slides in a new tab: https://mccall-pitcher.quarto.pub/learn-r-slides/#/title-slide
 <br>
-**Step 2:** Download materials as a zip file by clicking the green "Code" button, then "Download ZIP"
 <br>
-**Step 3:** Unzip the folder and save it somewhere logical in your files
+**Step 1:** Download materials as a zip file by clicking the green "Code" button, then "Download ZIP"
+<br>
+**Step 2:** Unzip the folder and save it somewhere logical in your files
+<br>

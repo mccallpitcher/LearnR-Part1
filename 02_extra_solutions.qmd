@@ -23,7 +23,9 @@ se_colleges <- read_csv("data/admissions_data.csv")
 
 #### 3. How many colleges are in the U.S. southeast?
 
-*Note:* There is one college per row. You can find this information in the `read_csv()` loading message, or the Environment pane.
+*Hint:* There is one college per row.
+
+*Note:* You can find this information in the `read_csv()` loading message, or the Environment pane.
 
 ***There are 407 rows in the data frame, which means there are 407 4-year colleges in the U.S. southeast.***
 
@@ -85,8 +87,8 @@ se_colleges |>
 
 Add two new variables (you come up with their names):
 
-1.  Acceptance rate (admitted divided by applied)
-2.  Yield rate (enrolled divided by admitted)
+1.  Acceptance rate (`n_admitted` divided by `n_applied`)
+2.  Yield rate (`n_enrolled` divided by `n_admitted`)
 
 Then, add a pipe and filter only to colleges with an acceptance rate below .15 and a yield rate above .5. Which colleges meet these criteria?
 

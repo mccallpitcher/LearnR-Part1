@@ -37,25 +37,19 @@ my_age
 Load the Taylor Swift data using `read_csv()`. You can name your data frame object `tswift`
 
 ```{r}
+# load data
 tswift <- read_csv("data/taylor_swift_spotify.csv")
 ```
 
 ## 09. **How can I get to know my variables?**
 
-1.  Using `summary()`, what is the median of `danceability`?
+Using `summary()`, determine whether the mean or median of `danceability` is greater.
 
-    ***0.5935***
-
-2.  Using `unique()`, name two Taylor Swift albums exactly as they appear in the data frame.
-
-    ***"Lover", "evermore (deluxe version)"***
+***Median is slightly greater (.59 vs. .58)***
 
 ```{r}
 # check out danceability
 summary(tswift$danceability)
-
-# check out albums
-unique(tswift$album)
 ```
 
 ## 10. **What are some ways I can transform my data?**
@@ -72,21 +66,25 @@ tswift |>
 
 ### 10.2 Subset columns with `select()`
 
-Limit the columns in `tswift` to only include `name` and `tempo`
+Limit the columns in `tswift` to only include `name` and `speechiness`
 
 ```{r}
 # subset columns
 tswift |> 
-  select(name, tempo)
+  select(name, speechiness)
 ```
 
 ### 10.3 Sort rows with `arrange()`
 
-What are the 3 most popular Taylor Swift songs (according to Spotify)?
+Find the 3 most popular Taylor Swift songs (according to Spotify)
+
+*Hint:* Browse the environment pane for the variable that measures this (it's near the bottom)
 
 ```{r}
+# sort by popularity (descending)
 tswift |> 
-  arrange(desc(popularity))
+  arrange(desc(popularity)) |> 
+  select(name, popularity)
 ```
 
 ### 10.4 Create new variables with `mutate()`
@@ -96,6 +94,7 @@ Create a new variable in `tswift` that multiplies `danceability` by 100 (you pic
 Note: The symbol for multiplication in R is `*`
 
 ```{r}
+# new variable + subset columns
 tswift |> 
   mutate(dance_100 = danceability * 100) |> 
   select(name, danceability, dance_100)

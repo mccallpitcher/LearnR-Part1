@@ -34,9 +34,7 @@ Load the Taylor Swift data using `read_csv()`. You can name your data frame obj
 
 ## 09. **How can I get to know my variables?**
 
-1.  Using `summary()`, what is the median of `danceability`?
-
-2.  Using `unique()`, name two Taylor Swift albums exactly as they appear in the data frame.
+Using `summary()`, determine whether the mean or median of `danceability` is greater.
 
 ```{r}
 
@@ -54,7 +52,7 @@ Filter `tswift` to only contain songs that are *NOT* on the "Lover" album
 
 ### 10.2 Subset columns with `select()`
 
-Limit the columns in `tswift` to only include `name` and `tempo`
+Limit the columns in `tswift` to only include `name` and `speechiness`
 
 ```{r}
 
@@ -62,7 +60,9 @@ Limit the columns in `tswift` to only include `name` and `tempo`
 
 ### 10.3 Sort rows with `arrange()`
 
-What are the 3 most popular Taylor Swift songs (according to Spotify)?
+Find the 3 most popular Taylor Swift songs (according to Spotify)
+
+*Hint:* Browse the environment pane for the variable that measures this (it's near the bottom)
 
 ```{r}
 
